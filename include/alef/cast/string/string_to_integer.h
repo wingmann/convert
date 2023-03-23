@@ -57,7 +57,7 @@ std::optional<uint32> string_to(const std::string& value, num::radix_flag radix)
 template<>
 std::optional<int64> string_to(const std::string& value, num::radix_flag radix) {
 #ifdef ALEF_LONG64
-    return __detail::safe_convert_string_to_integer(value, std::stol, radix);
+    return __detail::cast::safely_convert_string_to_integer(value, std::stol, radix);
 #else
     return __detail::cast::safely_convert_string_to_integer(value, std::stoll, radix);
 #endif
@@ -66,7 +66,7 @@ std::optional<int64> string_to(const std::string& value, num::radix_flag radix) 
 template<>
 std::optional<uint64> string_to(const std::string& value, num::radix_flag radix) {
 #ifdef ALEF_LONG64
-    return __detail::safe_convert_string_to_integer(value, std::stoul, radix);
+    return __detail::cast::safely_convert_string_to_integer(value, std::stoul, radix);
 #else
     return __detail::cast::safely_convert_string_to_integer(value, std::stoull, radix);
 #endif
