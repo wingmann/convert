@@ -7,16 +7,16 @@ if not exist ".\lib" (
 
 cd ".\lib"
 
-if not exist ".\alef" (
-    git clone https://github.com/wingmann/alef.git
+if not exist ".\alef-core" (
+    git clone https://github.com/wingmann/alef-core.git
 ) else (
-    echo alef was already installed
+    echo alef-core was already installed
 )
 
 if not exist ".\concepts" (
     git clone https://github.com/wingmann/concepts.git
 ) else (
-    echo alef was already installed
+    echo concepts was already installed
 )
 
 if exist "%HOMEPATH%\vcpkg" (
