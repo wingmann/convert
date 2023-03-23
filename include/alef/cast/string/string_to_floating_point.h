@@ -11,9 +11,9 @@ namespace __detail::cast {
 
 // Safely converts to floating point value.
 template<floating_point T>
-static std::optional<T> safe_convert_string_to_floating_point(
+static std::optional<T> safely_convert_string_to_floating_point(
     const std::string& value,
-    T (* func)(const std::string&, std::size_t*))
+    T (*func)(const std::string&, usize*))
 {
     try {
         return func(value, nullptr);
@@ -30,17 +30,17 @@ static std::optional<T> string_to(const std::string& value);
 
 template<>
 std::optional<float> string_to(const std::string& value) {
-    return __detail::cast::safe_convert_string_to_floating_point(value, std::stof);
+    return __detail::cast::safely_convert_string_to_floating_point(value, std::stof);
 }
 
 template<>
 std::optional<double> string_to(const std::string& value) {
-    return __detail::cast::safe_convert_string_to_floating_point(value, std::stod);
+    return __detail::cast::safely_convert_string_to_floating_point(value, std::stod);
 }
 
 template<>
 std::optional<long double> string_to(const std::string& value) {
-    return __detail::cast::safe_convert_string_to_floating_point(value, std::stold);
+    return __detail::cast::safely_convert_string_to_floating_point(value, std::stold);
 }
 
 ALEF_GLOBAL_NAMESPACE_END
