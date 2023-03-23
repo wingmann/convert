@@ -1,13 +1,12 @@
 #ifndef ALEF_CAST_STRING_STRING_TO_INTEGER_H
 #define ALEF_CAST_STRING_STRING_TO_INTEGER_H
 
-#include "../std_cast.h"
+#include "../macro.h"
 
 #include "alef/concepts.h"
 #include "alef/numerics.h"
 #include "alef/string.h"
 #include "alef/utility.h"
-
 
 ALEF_GLOBAL_NAMESPACE_BEGIN
 
